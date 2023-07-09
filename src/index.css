@@ -1,3 +1,12 @@
 p.paragraph {
    text-indent: 40px;
 }
+
+Nav.Link:hover {
+   color: red;
+}
+
+.top-spaced {
+   margin-top: 100px;
+   margin-bottom: 50px;
+}

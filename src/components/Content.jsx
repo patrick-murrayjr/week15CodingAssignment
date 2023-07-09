@@ -9,12 +9,12 @@ const Content = () => {
    const [paragraphs, setParagraphs] = useState(paragraphData);
 
    return (
-      <Container className='container my-5'>
+      <Container className='container top-spaced'>
          {blogs.map(blog => {
             return (
                <div key={blog.id}>
                   <div className='d-flex justify-content-between'>
-                     <h3 className='text-decoration-underline'>{blog.title}</h3>
+                     <h3 className='text-decoration-underline mt-4'>{blog.title}</h3>
                   </div>
                   <div>
                      {paragraphs

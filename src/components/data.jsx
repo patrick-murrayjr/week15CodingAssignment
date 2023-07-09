@@ -9,7 +9,7 @@ export const blogData = [
       id: 2,
       createdDate: '2022-06-17',
       author: 'Jane Givins',
-      title: '24 Hours to Improving React',
+      title: '24 Hours to Improving  your React skills',
    },
    {
       id: 3,
