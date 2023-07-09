@@ -5,11 +5,11 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-const Navigation = ({ title }) => {
+const Navigation = ({ title, blogs, setBlogs, paragraphs, setParagraphs }) => {
    return (
       <Navbar
          expand='lg'
-         className='navbar bg-primary px-4 py-3 '
+         className='navbar bg-primary px-4 py-3 shadow'
          fixed='top'
          data-bs-theme='dark'>
          <Container fluid>
@@ -20,9 +20,9 @@ const Navigation = ({ title }) => {
                   className='ms-auto my-2 my-lg-0 d-flex '
                   style={{ maxHeight: '100px' }}
                   navbarScroll>
-                  <Button variant='outline-light  ms-3 px-4'>Create New Post</Button>
+                  <Button variant='outline-light  ms-4 me-4 px-4'>Create Post</Button>
                </Nav>
-               <Form className='d-flex ms-3' data-bs-theme='light'>
+               <Form className='d-flex ms-4 me-4' data-bs-theme='light'>
                   <Form.Control
                      type='search'
                      placeholder='Search posts'

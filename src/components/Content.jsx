@@ -1,13 +1,9 @@
-import { useState } from 'react';
+/* eslint-disable react/prop-types */
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { blogData, paragraphData } from './data.jsx';
 
-const Content = () => {
-   const [blogs, setBlogs] = useState(blogData);
-   const [paragraphs, setParagraphs] = useState(paragraphData);
-
+const Content = ({ blogs, setBlogs, paragraphs, setParagraphs }) => {
    return (
       <Container className='container top-spaced'>
          {blogs.map(blog => {
