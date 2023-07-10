@@ -7,7 +7,14 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import AddBlog from './AddBlog';
 
-const Navigation = ({ title, blogs, setBlogs, searchTerm, setSearchTerm }) => {
+const Navigation = ({
+   title,
+   blogs,
+   setBlogs,
+   searchTerm,
+   setSearchTerm,
+   createNewBlog,
+}) => {
    const [searchField, setSearchField] = useState('');
    const [modalShow, setModalShow] = useState(false);
    const handleSearch = e => {
@@ -42,13 +49,17 @@ const Navigation = ({ title, blogs, setBlogs, searchTerm, setSearchTerm }) => {
                      onClick={() => setModalShow(true)}>
                      Create Post
                   </Button>
-                  <AddBlog show={modalShow} onHide={() => setModalShow(false)} />
+                  <AddBlog
+                     show={modalShow}
+                     onHide={() => setModalShow(false)}
+                     createNewBlog={createNewBlog}
+                  />
                </Nav>
                <Form className='d-flex ms-4 me-4' data-bs-theme='light'>
                   <Form.Control
                      type='search'
                      style={{ minWidth: '300px' }}
-                     placeholder='Search by Title or Author'
+                     placeholder='...search blogs'
                      className='me-3'
                      aria-label='Search'
                      value={searchField}

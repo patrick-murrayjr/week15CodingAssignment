@@ -3,6 +3,7 @@
 import Blog from './Blog';
 
 const Content = ({ blogs, setBlogs, searchTerm, fetchError, loading }) => {
+   console.table(blogs);
    return (
       <>
          {loading && <p className='text-success fs-4 fst-italic'>Loading data...</p>}

@@ -33,14 +33,35 @@ function App() {
       fetchBlogs();
    }, []);
 
+   const createNewBlog = async blog => {
+      try {
+         const response = await fetch(URL_ENDPOINT, {
+            method: 'POST',
+            headers: {
+               'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(blog),
+         });
+         if (!response.ok) {
+            throw new Error('Something went wrong');
+         }
+         const data = await response.json();
+         setBlogs([...blogs, data]);
+         setFetchError(null);
+      } catch (error) {
+         setFetchError(error.message);
+      }
+   };
+
    return (
       <div className='bg-secondary'>
          <Navigation
-            title={'Week 15 Project - REACT Blog Builder'}
+            title={'Week 15 Project - React Blog Builder'}
             blogs={blogs}
             setBlogs={setBlogs}
             searchTerm={searchTerm}
             setSearchTerm={setSearchTerm}
+            createNewBlog={createNewBlog}
          />
          <Container className='container top-spaced'>
             <Content
