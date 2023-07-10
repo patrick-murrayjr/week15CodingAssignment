@@ -8,7 +8,8 @@ import Content from './components/Content';
 function App() {
    const [blogs, setBlogs] = useState(blogData);
    const [paragraphs, setParagraphs] = useState(paragraphData);
-
+   const [searchTerm, setSearchTerm] = useState('');
+   // console.log(searchTerm);
    return (
       <>
          <Navigation
@@ -17,12 +18,15 @@ function App() {
             setBlogs={setBlogs}
             paragraphs={paragraphs}
             setParagraphs={setParagraphs}
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
          />
          <Content
             blogs={blogs}
             setBlogs={setBlogs}
             paragraphs={paragraphs}
             setParagraphs={setParagraphs}
+            searchTerm={searchTerm}
          />
          <Footer />
       </>

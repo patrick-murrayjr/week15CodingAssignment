@@ -8,7 +8,7 @@ export const blogData = [
    {
       id: 2,
       createdDate: '2022-06-17',
-      author: 'Jane Givins',
+      author: 'Jerry Givins',
       title: '24 Hours to Improving  your React skills',
    },
    {
@@ -31,7 +31,7 @@ export const paragraphData = [
       sortId: 1,
       subtitle: 'Functional is the new class-based',
       paragraph:
-         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam harum sunt vitae non itaque distinctio libero, nostrum, molestias debitis tempore fugiat quam? Illo repellat odit sed explicabo asperiores quo voluptates.Laboriosam harum sunt vitae non itaque distinctio libero, nostrum, molestias debitis tempore fugiat quam? Illo repellat odit sed explicabo asperiores quo voluptates.',
+         'Lorem ipsum dolor one amet consectetur adipisicing elit. Laboriosam harum sunt vitae non itaque distinctio libero, nostrum, molestias debitis tempore fugiat quam? Illo repellat odit sed explicabo asperiores quo voluptates.Laboriosam harum sunt vitae non itaque distinctio libero, nostrum, molestias debitis tempore fugiat quam? Illo repellat odit sed explicabo asperiores quo voluptates.',
    },
    {
       id: 2,
@@ -39,7 +39,7 @@ export const paragraphData = [
       sortId: 2,
       subtitle: '',
       paragraph:
-         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam harum sunt vitae non itaque distinctio libero, nostrum, molestias debitis tempore fugiat quam? Illo repellat odit sed explicabo asperiores quo voluptates.',
+         'Zorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam harum sunt vitae non itaque distinctio libero, nostrum, molestias debitis tempore fugiat quam? Illo repellat odit sed explicabo asperiores quo voluptates.',
    },
    {
       id: 3,
@@ -47,7 +47,7 @@ export const paragraphData = [
       sortId: 3,
       subtitle: '',
       paragraph:
-         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam harum sunt vitae non itaque distinctio libero, nostrum, molestias debitis tempore fugiat quam? Illo repellat odit sed explicabo asperiores quo voluptates.Laboriosam harum sunt vitae non itaque distinctio libero, nostrum, molestias debitis tempore fugiat quam? Illo repellat odit sed explicabo asperiores quo voluptates.',
+         'Florem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam harum sunt vitae non itaque distinctio libero, nostrum, molestias debitis tempore fugiat quam? Illo repellat odit sed explicabo asperiores quo voluptates.Laboriosam harum sunt vitae non itaque distinctio libero, nostrum, molestias debitis tempore fugiat quam? Illo repellat odit sed explicabo asperiores quo voluptates.',
    },
    {
       id: 4,
@@ -55,7 +55,7 @@ export const paragraphData = [
       sortId: 1,
       subtitle: 'How to begin with React',
       paragraph:
-         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam harum sunt vitae non itaque distinctio libero, nostrum, molestias debitis tempore fugiat quam? Illo repellat odit sed explicabo asperiores quo voluptates.Laboriosam harum sunt vitae non itaque distinctio libero, nostrum, molestias debitis tempore fugiat quam? Illo repellat odit sed explicabo asperiores quo voluptates.',
+         'Warem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam harum sunt vitae non itaque distinctio libero, nostrum, molestias debitis tempore fugiat quam? Illo repellat odit sed explicabo asperiores quo voluptates.Laboriosam harum sunt vitae non itaque distinctio libero, nostrum, molestias debitis tempore fugiat quam? Illo repellat odit sed explicabo asperiores quo voluptates.',
    },
    {
       id: 5,

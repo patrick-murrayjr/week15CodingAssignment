@@ -1,11 +1,34 @@
 /* eslint-disable react/prop-types */
+import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-const Navigation = ({ title, blogs, setBlogs, paragraphs, setParagraphs }) => {
+const Navigation = ({
+   title,
+   blogs,
+   setBlogs,
+   paragraphs,
+   setParagraphs,
+   searchTerm,
+   setSearchTerm,
+}) => {
+   const [searchField, setSearchField] = useState('');
+   const handleSearch = e => {
+      e.preventDefault();
+      setSearchField(e.target.value);
+      setSearchTerm(e.target.value);
+   };
+
+   const handleClear = e => {
+      e.preventDefault();
+
+      setSearchField('');
+      setSearchTerm('');
+   };
+
    return (
       <Navbar
          expand='lg'
@@ -25,11 +48,16 @@ const Navigation = ({ title, blogs, setBlogs, paragraphs, setParagraphs }) => {
                <Form className='d-flex ms-4 me-4' data-bs-theme='light'>
                   <Form.Control
                      type='search'
-                     placeholder='Search posts'
+                     style={{ minWidth: '300px' }}
+                     placeholder='Search by Title or Author'
                      className='me-3'
                      aria-label='Search'
+                     value={searchField}
+                     onChange={handleSearch}
                   />
-                  <Button variant='outline-light px-4'>Clear</Button>
+                  <Button variant='outline-light px-4' onClick={handleClear}>
+                     Clear
+                  </Button>
                </Form>
             </Navbar.Collapse>
          </Container>
