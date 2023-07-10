@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 const Paragraph = ({ content }) => {
-   console.log(content);
+   //    console.log(content);
    return (
       <div>
          {!content && <p> No data </p>}

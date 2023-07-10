@@ -1,13 +1,18 @@
 /* eslint-disable react/prop-types */
 
-import Container from 'react-bootstrap/Container';
 import Blog from './Blog';
 
-const Content = ({ blogs, setBlogs, searchTerm }) => {
+const Content = ({ blogs, setBlogs, searchTerm, fetchError, loading }) => {
    return (
-      <Container className='container top-spaced'>
-         <Blog blogs={blogs} setBlogs={setBlogs} searchTerm={searchTerm} />
-      </Container>
+      <>
+         {loading && <p className='text-success fs-4 fst-italic'>Loading data...</p>}
+         {fetchError && !loading && (
+            <p className='text-warning fs-4 fst-italic'>{fetchError}</p>
+         )}
+         {!fetchError && (
+            <Blog blogs={blogs} setBlogs={setBlogs} searchTerm={searchTerm} />
+         )}
+      </>
    );
 };
 

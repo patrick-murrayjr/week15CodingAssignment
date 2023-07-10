@@ -14,15 +14,16 @@ function Blog({ blogs, setBlogs, searchTerm }) {
             )
             .map(blog => {
                return (
-                  <div key={blog.id}>
-                     <div className='d-flex justify-content-between'>
-                        <h3 className='text-decoration-underline mt-4'>{blog.title}</h3>
+                  <div key={blog.id} className='col-lg my-4 m-3 '>
+                     <div className='card border-light mb-3 shadow-sm'>
+                        <div className='card-header text-light fs-4 bg-info'>
+                           {blog.title}
+                        </div>
+                        <div className='card-body mx-4'>
+                           <Paragraph content={blog.content} />
+                           <BlogFooter blog={blog} />
+                        </div>
                      </div>
-                     <div>
-                        <Paragraph content={blog.content} />
-                     </div>
-                     <BlogFooter blog={blog} />
-                     <hr />
                   </div>
                );
             })}

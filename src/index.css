@@ -1,3 +1,6 @@
+html {
+   background-color: rgb(238, 238, 238);
+}
 p.paragraph {
    text-indent: 40px;
 }
@@ -7,6 +10,6 @@ Nav.Link:hover {
 }
 
 .top-spaced {
-   margin-top: 100px;
+   margin-top: 120px;
    margin-bottom: 50px;
 }
