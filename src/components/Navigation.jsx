@@ -6,15 +6,7 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-const Navigation = ({
-   title,
-   blogs,
-   setBlogs,
-   paragraphs,
-   setParagraphs,
-   searchTerm,
-   setSearchTerm,
-}) => {
+const Navigation = ({ title, blogs, setBlogs, searchTerm, setSearchTerm }) => {
    const [searchField, setSearchField] = useState('');
    const handleSearch = e => {
       e.preventDefault();

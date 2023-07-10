@@ -2,14 +2,15 @@
 import Paragraph from './Paragraph';
 import BlogFooter from './BlogFooter';
 
-function Blog({ blogs, setBlogs, paragraphs, setParagraphs, searchTerm }) {
+function Blog({ blogs, setBlogs, searchTerm }) {
    return (
       <>
          {blogs
             .filter(
                blog =>
                   blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                  blog.author.toLowerCase().includes(searchTerm.toLowerCase())
+                  blog.author.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                  blog.content.toLowerCase().includes(searchTerm.toLowerCase())
             )
             .map(blog => {
                return (
@@ -18,15 +19,7 @@ function Blog({ blogs, setBlogs, paragraphs, setParagraphs, searchTerm }) {
                         <h3 className='text-decoration-underline mt-4'>{blog.title}</h3>
                      </div>
                      <div>
-                        {paragraphs
-                           .sort((a, b) => a.sortId - b.sortId) // sorted by sortId
-                           .map(paragraph => {
-                              if (paragraph.blogId === blog.id) {
-                                 return (
-                                    <Paragraph paragraph={paragraph} key={paragraph.id} />
-                                 );
-                              }
-                           })}
+                        <Paragraph content={blog.content} />
                      </div>
                      <BlogFooter blog={blog} />
                      <hr />

@@ -1,19 +1,12 @@
 /* eslint-disable react/prop-types */
-import { useState } from 'react';
+
 import Container from 'react-bootstrap/Container';
 import Blog from './Blog';
-import Paragraph from './Paragraph';
 
-const Content = ({ blogs, setBlogs, paragraphs, setParagraphs, searchTerm }) => {
+const Content = ({ blogs, setBlogs, searchTerm }) => {
    return (
       <Container className='container top-spaced'>
-         <Blog
-            blogs={blogs}
-            setBlogs={setBlogs}
-            paragraphs={paragraphs}
-            setParagraphs={setParagraphs}
-            searchTerm={searchTerm}
-         />
+         <Blog blogs={blogs} setBlogs={setBlogs} searchTerm={searchTerm} />
       </Container>
    );
 };
