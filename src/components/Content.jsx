@@ -2,8 +2,17 @@
 
 import Blog from './Blog';
 
-const Content = ({ blogs, setBlogs, searchTerm, fetchError, loading }) => {
-   // console.table(blogs);
+const Content = ({
+   blogs,
+   setBlogs,
+   searchTerm,
+   fetchError,
+   loading,
+   editBlog,
+   deleteBlog,
+   setMessage,
+   setMessageStyle,
+}) => {
    return (
       <>
          {loading && <p className='text-success fs-4 fst-italic'>Loading data...</p>}
@@ -11,7 +20,15 @@ const Content = ({ blogs, setBlogs, searchTerm, fetchError, loading }) => {
             <p className='text-warning fs-4 fst-italic'>{fetchError}</p>
          )}
          {!fetchError && (
-            <Blog blogs={blogs} setBlogs={setBlogs} searchTerm={searchTerm} />
+            <Blog
+               blogs={blogs}
+               setBlogs={setBlogs}
+               searchTerm={searchTerm}
+               editBlog={editBlog}
+               deleteBlog={deleteBlog}
+               setMessage={setMessage}
+               setMessageStyle={setMessageStyle}
+            />
          )}
       </>
    );

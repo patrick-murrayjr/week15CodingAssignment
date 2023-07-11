@@ -2,9 +2,21 @@
 import Paragraph from './Paragraph';
 import BlogFooter from './BlogFooter';
 
-function Blog({ blogs, setBlogs, searchTerm }) {
+function Blog({ blogs, deleteBlog, editBlog, searchTerm, setMessage, setMessageStyle }) {
    return (
       <>
+         {blogs.filter(
+            blog =>
+               blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+               blog.author.toLowerCase().includes(searchTerm.toLowerCase()) ||
+               blog.content.toLowerCase().includes(searchTerm.toLowerCase())
+         ).length === 0 && (
+            <div
+               key='0'
+               className='h-auto d-flex justify-content-center align-items-center'>
+               <p className='text-warning m-5 fs-3 fst-italic'>No matching items found</p>{' '}
+            </div>
+         )}
          {blogs
             .filter(
                blog =>
@@ -21,7 +33,14 @@ function Blog({ blogs, setBlogs, searchTerm }) {
                         </div>
                         <div className='card-body mx-4'>
                            <Paragraph content={blog.content} />
-                           <BlogFooter blog={blog} />
+                           {/* {console.log(blog.content)} */}
+                           <BlogFooter
+                              blog={blog}
+                              editBlog={editBlog}
+                              deleteBlog={deleteBlog}
+                              setMessage={setMessage}
+                              setMessageStyle={setMessageStyle}
+                           />
                         </div>
                      </div>
                   </div>

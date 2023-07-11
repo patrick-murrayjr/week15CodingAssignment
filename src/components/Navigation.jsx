@@ -8,12 +8,12 @@ import Navbar from 'react-bootstrap/Navbar';
 import AddBlog from './AddBlog';
 
 const Navigation = ({
-   title,
-   blogs,
-   setBlogs,
-   searchTerm,
    setSearchTerm,
    createNewBlog,
+   message,
+   setMessage,
+   messageStyle,
+   setMessageStyle,
 }) => {
    const [searchField, setSearchField] = useState('');
    const [modalShow, setModalShow] = useState(false);
@@ -37,7 +37,7 @@ const Navigation = ({
          fixed='top'
          data-bs-theme='dark'>
          <Container fluid>
-            <h3 className='text-light'>{title}</h3>
+            <h3 className={messageStyle}>{message}</h3>
             <Navbar.Toggle aria-controls='navbarScroll' />
             <Navbar.Collapse id='navbarScroll'>
                <Nav
@@ -50,6 +50,8 @@ const Navigation = ({
                      Create Post
                   </Button>
                   <AddBlog
+                     setMessage={setMessage}
+                     setMessageStyle={setMessageStyle}
                      show={modalShow}
                      onHide={() => setModalShow(false)}
                      createNewBlog={createNewBlog}

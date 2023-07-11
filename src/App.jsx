@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Footer from './components/Footer';
 import Navigation from './components/Navigation';
 import Content from './components/Content';
+import apiRequest from './components/apiRequest';
 
 function App() {
    const URL_ENDPOINT = 'https://64aa54b60c6d844abede5cae.mockapi.io/myBlog/blog';
@@ -13,6 +14,8 @@ function App() {
    const [searchTerm, setSearchTerm] = useState('');
    const [fetchError, setFetchError] = useState(null);
    const [loading, setLoading] = useState(true);
+   const [message, setMessage] = useState('Week 15 Project - React Blog Builder');
+   const [messageStyle, setMessageStyle] = useState('text-light');
 
    useEffect(() => {
       const fetchBlogs = async () => {
@@ -31,32 +34,59 @@ function App() {
          }
       };
       fetchBlogs();
-   }, []);
+   }, [message]);
 
    const createNewBlog = async blog => {
-      try {
-         const response = await fetch(URL_ENDPOINT, {
-            method: 'POST',
-            headers: {
-               'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(blog),
-         });
-         if (!response.ok) {
-            throw new Error('Something went wrong');
-         }
-         const data = await response.json();
-         setBlogs([...blogs, data]);
-         setFetchError(null);
-      } catch (error) {
-         setFetchError(error.message);
+      setBlogs([...blogs, blog]);
+      const postOptions = {
+         method: 'POST',
+         headers: {
+            'Content-Type': 'application/json',
+         },
+         body: JSON.stringify(blog),
+      };
+      const result = await apiRequest(URL_ENDPOINT, postOptions);
+      if (result) {
+         setFetchError(result);
       }
+   };
+
+   const editBlog = async blog => {
+      console.log(blog.id);
+      const putOptions = {
+         method: 'PUT',
+         headers: {
+            'Content-Type': 'application/json',
+         },
+         body: JSON.stringify(blog),
+      };
+      const result = await apiRequest(`${URL_ENDPOINT}/${blog.id}`, putOptions);
+      if (result) {
+         setFetchError(result);
+      }
+      const newBlogs = blogs.map(item => (item.id === blog.id ? blog : item));
+      setBlogs(newBlogs);
+   };
+
+   const deleteBlog = async id => {
+      const deleteOptions = {
+         method: 'DELETE',
+      };
+      const result = await apiRequest(`${URL_ENDPOINT}/${id}`, deleteOptions);
+      if (result) {
+         setFetchError(result);
+      }
+      const newBlogs = blogs.filter(blog => blog.id !== id);
+      setBlogs(newBlogs);
    };
 
    return (
       <div className='bg-secondary'>
          <Navigation
-            title={'Week 15 Project - React Blog Builder'}
+            message={message}
+            setMessage={setMessage}
+            messageStyle={messageStyle}
+            setMessageStyle={setMessageStyle}
             blogs={blogs}
             setBlogs={setBlogs}
             searchTerm={searchTerm}
@@ -67,6 +97,10 @@ function App() {
             <Content
                blogs={blogs}
                setBlogs={setBlogs}
+               editBlog={editBlog}
+               deleteBlog={deleteBlog}
+               setMessage={setMessage}
+               setMessageStyle={setMessageStyle}
                searchTerm={searchTerm}
                fetchError={fetchError}
                loading={loading}

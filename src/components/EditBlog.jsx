@@ -4,10 +4,10 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 
-const AddBlog = ({ createNewBlog, setMessage, setMessageStyle, ...props }) => {
-   const [author, setAuthor] = useState('');
-   const [title, setTitle] = useState('');
-   const [content, setContent] = useState('');
+const EditBlog = ({ editBlog, setMessage, setMessageStyle, blog, id, ...props }) => {
+   const [author, setAuthor] = useState(blog.author);
+   const [title, setTitle] = useState(blog.title);
+   const [content, setContent] = useState(blog.content);
    const [authorLabel, setAuthorLabel] = useState('Author');
    const [titleLabel, setTitleLabel] = useState('Title');
    const [contentLabel, setContentLabel] = useState('Content');
@@ -28,31 +28,26 @@ const AddBlog = ({ createNewBlog, setMessage, setMessageStyle, ...props }) => {
 
          //create blog object
          const blog = {
-            //  id: newID,
+            id: id,
             author: author,
             title: title,
             content: content,
-            createdDate: new Date().toLocaleDateString(),
+            // createdDate: new Date().toLocaleDateString(),
          };
-         //add blog to blogs array in App.js
-         createNewBlog(blog);
+         //add edit the blog in blogs array in App.js
+         editBlog(blog);
+         console.log(blog);
          //close modal
          props.onHide();
-         //clear form
-         clearForm();
+
          //set message
-         setMessage('Blog post created successfully!');
+         setMessage('Blog post edited successfully!');
          setMessageStyle('text-light fw-bold fst-italic');
          setTimeout(() => {
             setMessageStyle('text-light');
             setMessage('Week 15 Project - React Blog Builder');
          }, 2000);
       }
-   };
-   const clearForm = () => {
-      setAuthor('');
-      setTitle('');
-      setContent('');
    };
 
    const handleAuthor = e => {
@@ -73,7 +68,7 @@ const AddBlog = ({ createNewBlog, setMessage, setMessageStyle, ...props }) => {
          centered>
          <Modal.Header className='bg-info' closeButton>
             <Modal.Title id='contained-modal-title-vcenter' className='text-light'>
-               Add a New Blog Post
+               Edit Blog Post
             </Modal.Title>
          </Modal.Header>
          <Modal.Body>
@@ -85,8 +80,9 @@ const AddBlog = ({ createNewBlog, setMessage, setMessageStyle, ...props }) => {
                      type='text'
                      placeholder='...add name'
                      autoFocus
-                     required
+                     value={author}
                      onChange={handleAuthor}
+                     required
                   />
                </Form.Group>
                <Form.Group className='mb-3' controlId='AddBlog.ControlInput2'>
@@ -94,8 +90,9 @@ const AddBlog = ({ createNewBlog, setMessage, setMessageStyle, ...props }) => {
                   <Form.Control
                      type='text'
                      placeholder='...add title'
-                     required
+                     value={title}
                      onChange={handleTitle}
+                     required
                   />
                </Form.Group>
                <Form.Group className='mb-3' controlId='AddBlog.ControlTextarea1'>
@@ -104,6 +101,7 @@ const AddBlog = ({ createNewBlog, setMessage, setMessageStyle, ...props }) => {
                      as='textarea'
                      rows={10}
                      placeholder='...add content'
+                     value={content}
                      onChange={handleContent}
                      required
                   />
@@ -120,4 +118,4 @@ const AddBlog = ({ createNewBlog, setMessage, setMessageStyle, ...props }) => {
    );
 };
 
-export default AddBlog;
+export default EditBlog;
