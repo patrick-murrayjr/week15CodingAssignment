@@ -12,7 +12,7 @@ function Blog({ blogs, deleteBlog, editBlog, searchTerm, setMessage, setMessageS
                blog.content.toLowerCase().includes(searchTerm.toLowerCase())
          ).length === 0 && (
             <div
-               key='0'
+               key='a0'
                className='h-auto d-flex justify-content-center align-items-center'>
                <p className='text-warning m-5 fs-3 fst-italic'>No matching items found</p>{' '}
             </div>
