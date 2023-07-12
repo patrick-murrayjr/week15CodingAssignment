@@ -2,9 +2,10 @@
 import EditBlog from './EditBlog';
 import { Button } from 'react-bootstrap';
 import { useState } from 'react';
+import DeleteBlog from './DeleteBlog';
 
 const BlogFooter = ({ blog, deleteBlog, editBlog, setMessage, setMessageStyle }) => {
-   // const [modalDeleteShow, setModalDeleteShow] = useState(false);
+   const [modalDeleteShow, setModalDeleteShow] = useState(false);
    const [modalShow, setModalShow] = useState(false);
 
    const handleEditShow = id => {
@@ -12,15 +13,15 @@ const BlogFooter = ({ blog, deleteBlog, editBlog, setMessage, setMessageStyle })
       setModalShow(true);
    };
 
-   const handleDeleteClick = id => {
-      deleteBlog(id);
-      setMessageStyle('text-light fw-bold fst-italic');
-      setMessage('Blog post deleted successfully!');
-      setTimeout(() => {
-         setMessageStyle('text-light');
-         setMessage('Week 15 Project - React Blog Builder');
-      }, 2000);
-   };
+   // const handleDelete = id => {
+   //    deleteBlog(id);
+   //    setMessageStyle('text-light fw-bold fst-italic');
+   //    setMessage('Blog post deleted successfully!');
+   //    setTimeout(() => {
+   //       setMessageStyle('text-light');
+   //       setMessage('Week 15 Project - React Blog Builder');
+   //    }, 2000);
+   // };
    return (
       <>
          <a href='#top'>Return to top</a>
@@ -42,9 +43,17 @@ const BlogFooter = ({ blog, deleteBlog, editBlog, setMessage, setMessageStyle })
             blog={blog}
             id={blog.id}
          />
-         <Button variant='outline-danger ms-2' onClick={() => handleDeleteClick(blog.id)}>
+         <Button variant='outline-danger ms-2' onClick={() => setModalDeleteShow(true)}>
             Delete
          </Button>
+         <DeleteBlog
+            blog={blog}
+            deleteBlog={deleteBlog}
+            setMessage={setMessage}
+            setMessageStyle={setMessageStyle}
+            show={modalDeleteShow}
+            onHide={() => setModalDeleteShow(false)}
+         />
       </>
    );
 };
