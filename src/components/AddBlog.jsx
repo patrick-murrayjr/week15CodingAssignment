@@ -22,6 +22,7 @@ const AddBlog = ({ createNewBlog, setMessage, setMessageStyle, ...props }) => {
 
          return;
       } else {
+         // This sets the text for the labels back to the default values
          setAuthorLabel('Author');
          setTitleLabel('Title');
          setContentLabel('Content');
@@ -49,12 +50,14 @@ const AddBlog = ({ createNewBlog, setMessage, setMessageStyle, ...props }) => {
          }, 2000);
       }
    };
+   // Clear the form after the blog is created
    const clearForm = () => {
       setAuthor('');
       setTitle('');
       setContent('');
    };
 
+   //handler functions for form input
    const handleAuthor = e => {
       setAuthor(e.target.value);
    };

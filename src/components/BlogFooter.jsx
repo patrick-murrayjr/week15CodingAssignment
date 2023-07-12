@@ -8,20 +8,13 @@ const BlogFooter = ({ blog, deleteBlog, editBlog, setMessage, setMessageStyle })
    const [modalDeleteShow, setModalDeleteShow] = useState(false);
    const [modalShow, setModalShow] = useState(false);
 
+   // This function is called when the edit button is clicked
+   // It sets the modalShow state to true which opens the modal
    const handleEditShow = id => {
-      console.log(`edit clicked', id: ${id}`);
+      // console.log(`edit clicked', id: ${id}`);
       setModalShow(true);
    };
 
-   // const handleDelete = id => {
-   //    deleteBlog(id);
-   //    setMessageStyle('text-light fw-bold fst-italic');
-   //    setMessage('Blog post deleted successfully!');
-   //    setTimeout(() => {
-   //       setMessageStyle('text-light');
-   //       setMessage('Week 15 Project - React Blog Builder');
-   //    }, 2000);
-   // };
    return (
       <>
          <a href='#top'>Return to top</a>

@@ -17,6 +17,12 @@ function App() {
    const [message, setMessage] = useState('Week 15 Project - React Blog Builder');
    const [messageStyle, setMessageStyle] = useState('text-light');
 
+   // This code uses the fetch API to fetch blog posts from an API.
+   // The URL of the API is stored in a constant called URL_ENDPOINT.
+   // The blog posts are stored in a state variable called blogs
+   // The code also uses a state variable called loading to indicate whether the data is still loading, and a state variable called fetchError to store any errors that occur during fetching.
+   // The code uses the useEffect hook to fetch the data every time the message variable changes.
+
    useEffect(() => {
       const fetchBlogs = async () => {
          try {
@@ -36,6 +42,7 @@ function App() {
       fetchBlogs();
    }, [message]);
 
+   // This code uses the fetch API to  add a new blog post to the API.
    const createNewBlog = async blog => {
       setBlogs([...blogs, blog]);
       const postOptions = {
@@ -51,6 +58,7 @@ function App() {
       }
    };
 
+   // This code uses the fetch API to edit a blog post in the API.
    const editBlog = async blog => {
       console.log(blog.id);
       const putOptions = {
@@ -68,6 +76,7 @@ function App() {
       setBlogs(newBlogs);
    };
 
+   // This code uses the fetch API to delete a blog post from the API.
    const deleteBlog = async id => {
       const deleteOptions = {
          method: 'DELETE',

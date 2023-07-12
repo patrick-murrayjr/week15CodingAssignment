@@ -2,6 +2,12 @@
 import Paragraph from './Paragraph';
 import BlogFooter from './BlogFooter';
 
+// This component is responsible for rendering the blog posts.
+// It receives the blogs array from App.js and maps over it to render each blog post.
+// It also receives the searchTerm from App.js and filters the blogs array based on the searchTerm.
+// It also receives the editBlog and deleteBlog functions from App.js and passes them to the BlogFooter component.
+// It also receives the setMessage and setMessageStyle functions from App.js and passes them to the BlogFooter component.
+
 function Blog({ blogs, deleteBlog, editBlog, searchTerm, setMessage, setMessageStyle }) {
    return (
       <>

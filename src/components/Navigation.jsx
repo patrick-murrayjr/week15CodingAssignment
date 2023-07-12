@@ -17,15 +17,19 @@ const Navigation = ({
 }) => {
    const [searchField, setSearchField] = useState('');
    const [modalShow, setModalShow] = useState(false);
+
+   // This code hanldes the search field
+   // The search field is a controlled component
+   // The search term is passed up to App so that is can be sen down to BlogList to filter the blogs
    const handleSearch = e => {
       e.preventDefault();
       setSearchField(e.target.value);
       setSearchTerm(e.target.value);
    };
 
+   // This code clears the search field
    const handleClear = e => {
       e.preventDefault();
-
       setSearchField('');
       setSearchTerm('');
    };

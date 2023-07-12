@@ -12,6 +12,9 @@ const EditBlog = ({ editBlog, setMessage, setMessageStyle, blog, id, ...props })
    const [titleLabel, setTitleLabel] = useState('Title');
    const [contentLabel, setContentLabel] = useState('Content');
 
+   // This function is called when the save button is clicked
+   // It calls the editBlog function in App.js and passes the blog object to be edited
+   // It also sets the message and messageStyle states in App.js to display a message to the user
    const handleSubmit = e => {
       e.preventDefault();
       //form validation
@@ -22,6 +25,7 @@ const EditBlog = ({ editBlog, setMessage, setMessageStyle, blog, id, ...props })
 
          return;
       } else {
+         // reset labels
          setAuthorLabel('Author');
          setTitleLabel('Title');
          setContentLabel('Content');
@@ -50,6 +54,7 @@ const EditBlog = ({ editBlog, setMessage, setMessageStyle, blog, id, ...props })
       }
    };
 
+   // handlers for form inputs
    const handleAuthor = e => {
       setAuthor(e.target.value);
    };

@@ -1,4 +1,10 @@
 /* eslint-disable no-unsafe-finally */
+
+// Function to make API request and return error message if any
+// url: API url
+// optionsObj: options object for fetch
+// errMsg: error message to be returned
+
 export const apiRequest = async (url = '', optionsObj = null, errMsg = null) => {
    try {
       const response = await fetch(url, optionsObj);

@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
-
 import Blog from './Blog';
 
+// This component is responsible for rendering the blog posts.
 const Content = ({
    blogs,
    setBlogs,

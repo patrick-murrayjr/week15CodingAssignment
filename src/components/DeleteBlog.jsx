@@ -3,6 +3,10 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 const DeleteBlog = ({ blog, deleteBlog, setMessage, setMessageStyle, ...props }) => {
+   // This code handles the delete button
+   // It calls the deleteBlog function in App.js and passes the id of the blog to be deleted
+   // It also sets the message and messageStyle states in App.js to display a message to the user
+
    const handleDelete = id => {
       deleteBlog(id);
       setMessageStyle('text-light fw-bold fst-italic');
