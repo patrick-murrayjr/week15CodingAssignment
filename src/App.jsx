@@ -8,7 +8,9 @@ import Content from './components/Content';
 import apiRequest from './components/apiRequest';
 
 function App() {
-   const URL_ENDPOINT = 'https://64aa54b60c6d844abede5cae.mockapi.io/myBlog/blog';
+   // const URL_ENDPOINT = 'https://64aa54b60c6d844abede5cae.mockapi.io/myBlog/blog';
+   //updated endpoint to use local json-server
+   const URL_ENDPOINT = 'http://localhost:3000/blog';
 
    const [blogs, setBlogs] = useState([]);
    const [searchTerm, setSearchTerm] = useState('');

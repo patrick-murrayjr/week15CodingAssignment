@@ -1,0 +1,81 @@
+{
+  "blog": [
+    {
+      "createdDate": "2022-06-17",
+      "author": "Jerry Givins",
+      "title": "24 Hours to Improving  your React skills",
+      "content": "If you're looking to enhance your React skills and level up your development game, you're in luck! With just 24 hours of focused effort, you can make significant progress in mastering React. Start by revisiting the fundamentals and solidifying your understanding of React components, JSX syntax, and state management. Next, explore more advanced concepts like React Router for handling navigation, Redux for centralized state management, and React Hooks for functional component enhancements. Engage in coding exercises, build small projects, and seek out online tutorials and resources. By immersing yourself in the React ecosystem and dedicating time to practice, you'll see your skills grow and confidence soar in no time at all.",
+      "id": "2"
+    },
+    {
+      "createdDate": "2022-04-03",
+      "author": "Bill Blake",
+      "title": "Javascript and React in detail",
+      "content": "JavaScript is a powerful programming language that forms the backbone of web development. It enables dynamic and interactive elements on web pages, making them more engaging for users. With JavaScript, you can manipulate the DOM, handle events, perform calculations, and interact with APIs. One popular JavaScript library is React. React is a declarative and component-based framework that simplifies the creation of user interfaces. It offers reusable components, efficient rendering, and a virtual DOM for optimized performance. React's unidirectional data flow and virtual DOM diffing algorithm ensure efficient updates and seamless user experiences. By combining JavaScript's versatility with React's component-based architecture, developers can build modern and responsive web applications that scale with ease.",
+      "id": "3"
+    },
+    {
+      "createdDate": "2023-05-19",
+      "author": "Jerry Simpson",
+      "title": "How to get the most out of your CSS and React",
+      "content": "To maximize the potential of your CSS in combination with React, it's essential to adopt effective strategies and best practices. Firstly, embrace the concept of component-based styling. Encapsulate CSS rules within React components, utilizing libraries like styled-components or CSS modules. This approach promotes modularity and avoids the global scope issues often associated with traditional CSS. Additionally, leverage CSS preprocessors like Sass or Less to enhance your CSS authoring experience with features like variables, mixins, and nested selectors. Another crucial aspect is the use of CSS frameworks such as Bootstrap or Tailwind CSS, which provide pre-built styles and components that can be easily integrated into your React project. Lastly, consider optimizing CSS performance by utilizing techniques like code splitting, critical CSS, and lazy loading to reduce the initial load time and improve overall performance. By implementing these strategies, you can harness the full potential of CSS in conjunction with React, resulting in more efficient and maintainable styling for your web applications.",
+      "id": "4"
+    },
+    {
+      "createdDate": "7/10/2023",
+      "author": "George Hill",
+      "title": "How to Blog about blogging about blogs",
+      "content": "Rendered her for put improved concerns his. Ladies bed wisdom theirs mrs men months set. Everything so dispatched as it increasing pianoforte. Hearing now saw perhaps minutes herself his. Of instantly excellent therefore difficult he northward. Joy green but least marry rapid quiet but. Way devonshire introduced expression saw travelling affronting. Her and effects affixed pretend account ten natural. Need eat week even yet that. Incommode delighted he resolving sportsmen do in listening.\n",
+      "id": "5"
+    },
+    {
+      "createdDate": "7/10/2023",
+      "author": "Patrick Murray",
+      "title": "How to build a blog",
+      "content": "Step 1. Code it.\nStep 2. Test it.\nStep 3. Stare in confusion and ask it why it doesn't work.\nStep 4. Take break.\nStep 5. Re-code it.\nStep 6. Repeat as needed.",
+      "id": "6"
+    },
+    {
+      "createdDate": "7/10/2023",
+      "author": "Larry McDaniels",
+      "title": "Cool tricks in the virtual DOM",
+      "content": "Cause dried no solid no an small so still widen. Ten weather evident smiling bed against she examine its. Rendered far opinions two yet moderate sex striking. Sufficient motionless compliment by stimulated assistance at. Convinced resolving extensive not agreeable in it on as remainder. Cordially say affection met who propriety him. Are man she towards private weather pleased. In more part he lose need so want rank no. At bringing or he sensible pleasure. Prevent he parlors do waiting be females an message society.",
+      "id": "7"
+    },
+    {
+      "createdDate": "7/11/2023",
+      "author": "Larry McDaniels",
+      "title": "Cool things to do in Vanilla JS",
+      "content": "Surrounded to me occasional pianoforte alteration unaffected impossible ye. For saw half than cold. Pretty merits waited six talked pulled you. Conduct replied off led whether any shortly why arrived adapted. Numerous ladyship so raillery humoured goodness received an. So narrow formal length my highly longer afford oh. Tall neat he make or at dull ye. Additional text added.",
+      "id": "9"
+    },
+    {
+      "createdDate": "7/11/2023",
+      "author": "Larry McAndrews",
+      "title": "new blog about bloggers who blog about blogging about blogs",
+      "content": "Received shutters expenses ye he pleasant. Drift as blind above at up. No up simple county stairs do should praise as. Drawings sir gay together landlord had law smallest. Formerly pleasant attended declared met say unlocked. Jennings outlived no dwelling denoting in peculiar as he believed. Behaviour excellent middleton be as it curiosity departure ourselves.",
+      "id": "10"
+    },
+    {
+      "createdDate": "7/12/2023",
+      "author": "Carl Wilson",
+      "title": "The Virtual DOM is virtual, but what does that actually mean?",
+      "content": "Of on affixed civilly moments promise explain fertile in. Assurance advantage belonging happiness departure so of. Now improving and one sincerity intention allowance commanded not. Oh an am frankness be necessary earnestly advantage estimable extensive. Five he wife gone ye. Mrs suffering sportsmen earnestly any. In am do giving to afford parish settle easily garret.",
+      "id": "11"
+    },
+    {
+      "createdDate": "7/13/2023",
+      "author": "new guy",
+      "title": "new post",
+      "content": "another new post",
+      "id": "15"
+    },
+    {
+      "author": "Rob Bloggly",
+      "title": "newest blog about blogs",
+      "content": "updated to use db.json",
+      "createdDate": "7/27/2023",
+      "id": "b90MnMm"
+    }
+  ]
+}
